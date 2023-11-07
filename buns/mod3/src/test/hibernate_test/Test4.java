@@ -21,7 +21,7 @@ public class Test4 {
             emp.setSalary(1500);
 
             //с условиями
-            session.createQuery("update Employee set salary=1000 " + "where firstName = 'Danil'")
+            session.createQuery("update Employee set salary=1000 " + "where firstName = 'Nikita'")
                     .executeUpdate();
 
             session.getTransaction().commit();
