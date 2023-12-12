@@ -16,11 +16,9 @@ public class Test4 {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            //изменение объекта таблицы при помощи геттера и сеттера
             Employee emp = session.get(Employee.class, 1);
             emp.setSalary(1500);
 
-            //с условиями
             session.createQuery("update Employee set salary=1000 " + "where firstName = 'Nikita'")
                     .executeUpdate();
 
