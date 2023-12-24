@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom 404</title>
+</head>
+<body>
+<h1>Error 204 Page (No content)</h1>
+<p th:text="${errorMessage}"></p>
+<a th:href="@{/books/shelf}">back to books/shelf</a>
+</body>
+</html>
