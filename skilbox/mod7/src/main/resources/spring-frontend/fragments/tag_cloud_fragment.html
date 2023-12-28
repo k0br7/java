@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="Tags" id="tags" th:fragment="cloud">
+
+        <div class="Tag" th:class="'Tag '+${cloudItem.value}" th:each="cloudItem : ${tagcloud}">
+            <a href="/tags/index.html" th:href="'/tags/'+${cloudItem.key.slug}"  th:text="${cloudItem.key.name}">современная литература</a>
+        </div>
+</div>
+</html>

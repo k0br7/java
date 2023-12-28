@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="Tags Tags_embed" th:fragment="genremenu(service,parentid)">
+    <div class="Tags" th:each="genre : ${service.getByParentId(parentid)}">
+        <div class="Tags-title">
+            <div class="Tag"><a href="/genres/slug.html" th:href="'/genres/'+${genre.slug}" ><span th:text="${genre.name}">Серьёзное чтение</span><span class="undefined-amount">(18)</span></a>
+            </div>
+        </div>
+            <div th:replace="~{fragments/genre_fragment :: genremenu(service=${service},parentid=${genre.id})}">
+            </div>
+    </div>
+</div>
+</html>

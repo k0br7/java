@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="article">
+    <h1 class="Middle-title" th:text="${author.name}">Борис Васильевич Бедный
+    </h1>
+    <article class="Article">
+        <div class="sdf">
+        </div>
+        <div class="Spoiler">
+            <div class="Spoiler-visible">
+                <div class="pict pict_left"><img src="/assets/img/content/main/card.jpg"  th:src="${author.photo}" alt="card.jpg"/>
+                </div>
+                <div>
+                    <h2>Биография
+                    </h2>
+                   <p th:text="${#strings.substring(author.description,0,author.description.length/4)}">
+                        Четверть биографии
+                   </p>
+                </div>
+            </div>
+            <div class="Spoiler-hide">
+                <p th:text="${#strings.substring(author.description,author.description.length/4)}">
+                    Остальная часть биографии
+                </p>
+            </div>
+            <div class="Spoiler-footer">
+                <button class="Spoiler-trigger btn btn_primary btn_nr" type="button" data-showtext="Свернуть"
+                        data-hidetext="Показать полностью">
+                </button>
+            </div>
+        </div>
+    </article>
+</div>
+</html>
